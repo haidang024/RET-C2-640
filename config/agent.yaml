@@ -1,0 +1,22 @@
+# Agent Manifest — AgentRegistry entry point
+id: "RET-C2-640"
+name: "Loyalty Dispute Resolution Agent"
+namespace: "agent1000"
+version: "1.0.2"
+enabled: true
+category: "Cat 2"
+generation_mode: "llm"
+industry: "RET"
+
+base_type: "AgentBaseGraph"
+class: "src.graph.graph.Graph"
+
+required_trust_level: "VERIFIED_EXTERNAL"
+
+requires:
+  secrets:
+    - "loyalty_api_key"
+    - "AZURE_OPENAI_API_KEY"
+    - "AZURE_OPENAI_ENDPOINT"
+    - "AZURE_OPENAI_DEPLOYMENT"
+  extras: ["openai"]

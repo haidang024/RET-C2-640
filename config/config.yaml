@@ -1,0 +1,26 @@
+# Runtime configuration loaded separately from the static manifest.
+max_retry: 3
+timeout_s: 60
+llm_provider: "azure_openai"
+llm_model: "azure-openai-deployment"
+memory_enabled: false
+
+hitl:
+  enabled: true
+  max_hitl: 1
+
+loyalty:
+  api_version: "2024-01"
+  approved_source_ids:
+    - "LOYALTY_DB"
+    - "OFFER_CATALOG"
+    - "DISPUTE_HISTORY"
+  max_rules_per_offer: 50
+  max_history_records: 200
+  max_prior_disputes: 20
+  max_dispute_period_days: 365
+
+output:
+  decision_support_only: true
+  eligibility_decision_prohibited: true
+  account_mutation_prohibited: true
